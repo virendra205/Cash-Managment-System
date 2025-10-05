@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.css">
+    <title>Cash Book</title>
+</head>
+<body>
+    <div class="container">
+    <header>
+      <h1>Cash Book</h1>
+    </header>
+    <div class="content">
+      <!-- First Row: Morning, Evening, and Account Information Sections -->
+      <div class="row">
+        <!-- Morning Section -->
+        <div class="section morning">
+          <h2>Morning</h2>
+          <div id="morning-entries">
+            <!-- Morning Entries -->
+            <div class="entry">
+              <label>Cash</label>
+              <input type="number" class="morning-input" id="morning-cash" placeholder="₹0.00" oninput="calculateTotal('morning')" />
+            </div>
+            <div class="entry">
+              <label>Saving</label>
+              <input type="number" class="morning-input" placeholder="₹0.00" oninput="calculateTotal('morning')" />
+            </div>
+             <div class="entry">
+              <label>Current</label>
+              <input type="number" class="morning-input" placeholder="₹0.00" oninput="calculateTotal('morning')" />
+            </div>
+             <div class="entry">
+              <label>CSP</label>
+              <input type="number" class="morning-input" placeholder="₹0.00" oninput="calculateTotal('morning')" />
+            </div>
+             <div class="entry">
+              <label>OD</label>
+              <input type="number" class="morning-input" placeholder="₹0.00" oninput="calculateTotal('morning')" />
+            </div>
+             <div class="entry">
+              <label>Limit</label>
+              <input type="number" class="morning-input" placeholder="₹0.00" oninput="calculateTotal('morning')" />
+            </div>
+             <div class="entry">
+              <label>Bill</label>
+              <input type="number" class="morning-input" placeholder="₹0.00" oninput="calculateTotal('morning')" />
+            </div>
+             <div class="entry">
+              <label>D.P</label>
+              <input type="number" class="morning-input" placeholder="₹0.00" oninput="calculateTotal('morning')" />
+            </div>
+          </div>
+          <button onclick="addRow('morning')">Add Row</button>
+          <div class="total">
+            <span>Total</span>
+            <span id="morning-total">₹0.00</span>
+          </div>
+        </div>
+
+        <!-- Evening Section -->
+        <div class="section evening">
+          <h2>Evening</h2>
+          <div id="evening-entries">
+            <!-- Evening Entries -->
+            <div class="entry">
+              <label>Cash</label>
+              <input type="number" class="evening-input" placeholder="₹0.00" oninput="calculateTotal('evening')" />
+            </div>
+            <div class="entry">
+              <label>Saving</label>
+              <input type="number" class="evening-input" placeholder="₹0.00" oninput="calculateTotal('evening')" />
+            </div>
+            <div class="entry">
+              <label>Current</label>
+              <input type="number" class="evening-input" placeholder="₹0.00" oninput="calculateTotal('evening')" />
+            </div>
+            <div class="entry">
+              <label>CSP</label>
+              <input type="number" class="evening-input" placeholder="₹0.00" oninput="calculateTotal('evening')" />
+            </div>
+            <div class="entry">
+              <label>OD</label>
+              <input type="number" class="evening-input" placeholder="₹0.00" oninput="calculateTotal('evening')" />
+            </div>
+            <div class="entry">
+              <label>Limit</label>
+              <input type="number" class="evening-input" placeholder="₹0.00" oninput="calculateTotal('evening')" />
+            </div>
+            <div class="entry">
+              <label>Bill</label>
+              <input type="number" class="evening-input" placeholder="₹0.00" oninput="calculateTotal('evening')" />
+            </div>
+            <div class="entry">
+              <label>D.P</label>
+              <input type="number" class="evening-input" placeholder="₹0.00" oninput="calculateTotal('evening')" />
+            </div>
+          </div>
+          <button onclick="addRow('evening')">Add Row</button>
+          <div class="total">
+            <span>Total</span>
+            <span id="evening-total">₹0.00</span>
+          </div>
+        </div>
+
+        <!-- Account Information Section -->
+        <div class="section account">
+          <h2>Account Information</h2>
+          <div id="account-entries">
+            <!-- Account Entries -->
+            <div class="entry">
+              <label>Account</label>
+              <input type="number" class="account-input" placeholder="₹0.00" oninput="calculateTotal('account')" />
+            </div>
+            <div class="entry">
+              <label>KYC</label>
+              <input type="number" class="account-input" placeholder="₹0.00" oninput="calculateTotal('account')" />
+            </div>
+              <div class="entry">
+              <label>Pancard</label>
+              <input type="number" class="account-input" placeholder="₹0.00" oninput="calculateTotal('account')" />
+            </div>
+              <div class="entry">
+              <label>Form</label>
+              <input type="number" class="account-input" placeholder="₹0.00" oninput="calculateTotal('account')" />
+            </div>
+          </div>
+          <button onclick="addRow('account')">Add Row</button>
+          <div class="total">
+            <span>Total</span>
+            <span id="account-total">₹0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Balance Section -->
+      <div class="balance">
+        <h2>Balance</h2>
+        <span id="balance-amount">₹0.00</span>
+      </div>
+
+      <!-- Submit Button -->
+      <button onclick="submitData()">Submit</button>
+    </div>
+  </div>
+
+  <!---fetch function -->
+   <h1>Fetch Data from Google Sheets</h1>
+    <label for="date">Select Date:</label>
+    <input type="date" id="date" />
+    <button onclick="fetchData()">Fetch Data</button>
+    <div id="result" style="margin-top: 20px;"></div>
+
+    <script src="cashbook.js"></script>
+
+</body>
+</html>

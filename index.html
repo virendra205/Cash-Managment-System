@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Style.css">
+    <title>Cash Managment System</title>
+</head>
+<body>
+       <!--Header Section -->
+    <header class="header_section">
+      <!--Logo Images-->
+      <div class="logo_containt">
+        <h1 class="project_name">Cash Managment</h1>
+      </div>
+      <div class="button_input_container">
+        <!-- <input type="date" id="date">  -->
+        <div class="date_container"></div>
+        <!-- <img src="img/clock desing.png" alt="" width="200px" height="100px"> -->
+        <button class="button_des" id="openby" style="margin:5px;">
+            Swap
+        </button>
+        <!--Cash book buttons--->
+        <div class="cash_add">
+        <button onclick="openCashbook()" id="openby">Cashbook</button>
+         </div>
+      </div>
+
+      <!--Help Button---->
+    <button class="help-button" onclick="openPopup()"></button>
+
+    <div class="overlay_sect" id="overlay_js" onclick="closePopup()"></div>
+
+    <div class="popup" id="popup">
+        <h2>Contact Information</h2>
+        <p>Email: <a href="mailto:dkcscacademy@gmail.com">dkcscacademy@gmail.com</a></p>
+        <p>Mobile: <a href="tel:1234567890">9075891369</a></p>
+        <p>Mobile: <a href="tel:1234567890">9096859631</a></p>
+        <button class="close-button" onclick="closePopup()">Close</button>
+    </div>
+
+           <!----Wrong Notification Code------>
+      <div class="wrong_main_container_not">
+      <div class="notification_error" id="notification_section">
+        <div class="icon">&#10060;</div> <!-- Cross icon -->
+        <div class="text">
+            <div class="title">Error</div>
+            <div>Either Account Number or Customer Name is required!</div>
+        </div>
+        <button class="close-btn" onclick="ercloseNotification()">&times;</button>
+        <div class="progress-bar"></div>
+    </div>
+
+    </header>
+
+    <section class="show_and_hin">
+      <form class="deno_form">
+        <div class="basic_container">
+          <span class="close_btn">X</span>
+          <div class="denomanitation_container">
+            <label>500X</label>
+            <input
+              type="number"
+              id="cash500"
+              placeholder="500"
+              name="addcash500"
+            />
+            <label>200X</label>
+            <input
+              type="number"
+              id="cash200"
+              placeholder="200"
+              name="addcash200"
+            />
+            <label>100X</label>
+            <input
+              type="number"
+              id="cash100"
+              placeholder="100"
+              name="addcash100"
+            />
+            <label>50X</label>
+            <input
+              type="number"
+              id="cash50"
+              placeholder="50"
+              name="addcash50"
+            />
+            <label>20X</label>
+            <input
+              type="number"
+              id="cash20"
+              placeholder="20"
+              name="addcash20"
+            />
+            <label>10X</label>
+            <input
+              type="number"
+              id="cash10"
+              placeholder="10"
+              name="addcash10"
+            />
+            <label>20C</label>
+            <input
+              type="number"
+              id="cash12"
+              placeholder="20 Coin"
+              name="addcash12"
+            />
+            <label>10C</label>
+            <input
+              type="number"
+              id="cash11"
+              placeholder="10 Coin"
+              name="addcash11"
+            />
+            <label>5X</label>
+            <input type="number" id="cash5" placeholder="5" name="addcash5" />
+            <label>2X</label>
+            <input type="number" id="cash2" placeholder="2" name="addcash2" />
+            <label>1X</label>
+            <input type="number" id="cash1" placeholder="1" name="addcash1" />
+
+            <br />
+            <button id="submit" type="submit" name="deno_sub">Submit</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+<!--  
+--------------Denominatin table ----------------- -->
+
+      <table id="denoTable">
+        <thead>
+      <tr>
+        <th>Denomination</th>
+        <th>500</th>
+        <th>200</th>
+        <th>100</th>
+        <th>50</th>
+        <th>20</th>
+        <th>10</th>
+        <th>20C</th>
+        <th>10C</th>
+        <th>5C</th>
+        <th>2C</th>
+        <th>1C</th>
+        <th>Total Amount</th>
+      </tr>
+    </thead>
+
+      
+      <tbody>
+        <!-- Rows will be dynamically inserted here -->
+      </tbody>
+    </table>
+    
+
+
+
+
+    <!---Input file and cash enter and cash out -->
+    <div class="main_container">
+      <div class="container">
+        <form class="form_container">
+          <input type="datetime-local" id="datetime" name="datanameanddate" />
+          <input type="number" id="accountno" name="account" placeholder="Account/Adhar/Mobile No">
+          <div class="customer-name">
+            <label for="customer-name">Customer Name</label>
+            <input
+              type="text"
+              id="customer-name"
+              name="customername"
+              placeholder="Customer Name"
+            />
+          </div>
+          <div class="cash-container">
+            <div class="cash-section">
+              <h2 style="color: lightgreen">Cash In</h2>
+              <div class="cash-row">
+                <span style="color: lightgreen">500 X</span>
+                <input
+                  type="number"
+                  id="add500"
+                  placeholder="Cash in 500"
+                  name="cashin500"
+                  oninput="alltotal()"
+                />
+                <div class="alltotal500" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: lightgreen">200X</span>
+                <input
+                  type="number"
+                  id="add200"
+                  placeholder="Cash in 200"
+                  name="cashin200"
+                  oninput="alltotal()"
+                />
+                <div class="alltotal200" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: lightgreen">100 X</span>
+                <input
+                  type="number"
+                  id="add100"
+                  placeholder="Cash in 100"
+                  name="cashin100"
+                  oninput="alltotal()"
+                />
+                <div class="alltotal100" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: lightgreen">50 X</span>
+                <input
+                  type="number"
+                  id="add50"
+                  placeholder="Cash in 50"
+                  name="cashin50"
+                  oninput="alltotal()"
+                />
+                <div class="alltotal50" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: lightgreen">20 X</span>
+                <input
+                  type="number"
+                  id="add20"
+                  placeholder="Cash in 20"
+                  name="cashin20"
+                  oninput="alltotal()"
+                />
+                <div class="alltotal20" class="deno_mul"></div>
+              </div>
+
+              <div class="cash-row">
+                <span style="color: lightgreen">10 X</span>
+                <input
+                  type="number"
+                  id="add10"
+                  placeholder="Cash in 10"
+                  name="cashin10"
+                  oninput="alltotal()"
+                />
+                <div class="alltotal10" class="deno_mul"></div>
+              </div>
+              <!--Coin Container-->
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">20 C</span>
+                <input
+                  type="number"
+                  id="add12"
+                  placeholder="coin in 20"
+                  name="cashin12"
+                  oninput="alltotal()"
+                />
+                <div class="allout12" class="deno_mul"></div>
+              </div>
+              <!--Coin Container-->
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">10 C</span>
+                <input
+                  type="number"
+                  id="add11"
+                  placeholder="coin in 10"
+                  name="cashin11"
+                  oninput="alltotal()"
+                />
+                <div class="allout11" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">5 X</span>
+                <input
+                  type="number"
+                  id="add5"
+                  placeholder="coin in 5"
+                  name="cashin5"
+                  oninput="alltotal()"
+                />
+                <div class="alltotal5" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">2 X</span>
+                <input
+                  type="number"
+                  id="add2"
+                  placeholder="coin in 2"
+                  name="cashin2"
+                  oninput="alltotal()"
+                />
+                <div class="alltotal2" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">1 X</span>
+                <input
+                  type="number"
+                  id="add1"
+                  placeholder="coin in 1"
+                  name="cashin1"
+                  oninput="alltotal()"
+                />
+                <div class="alltotal1" class="deno_mul"></div>
+              </div>
+
+              <div class="alldenomation">Total</div>
+            </div>
+            <div class="cash-section">
+              <h2 style="color: red">Cash Out</h2>
+              <div class="cash-row">
+                <span style="color: red">500 X</span>
+                <input
+                  type="number"
+                  id="sub500"
+                  placeholder="Cash out 500"
+                  name="cashout500"
+                  oninput="subtotal()"
+                />
+                <div class="allout500" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: red">200 X</span>
+                <input
+                  type="number"
+                  id="sub200"
+                  placeholder="Cash out 200"
+                  name="cashout200"
+                  oninput="subtotal()"
+                />
+                <div class="allout200" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: red">100 X</span>
+                <input
+                  type="number"
+                  id="sub100"
+                  placeholder="Cash out 100"
+                  name="cashout100"
+                  oninput="subtotal()"
+                />
+                <div class="allout100" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: red">50 X</span>
+                <input
+                  type="number"
+                  id="sub50"
+                  placeholder="Cash out 50"
+                  name="cashout50"
+                  oninput="subtotal()"
+                />
+                <div class="allout50" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: red">20 X</span>
+                <input
+                  type="number"
+                  id="sub20"
+                  placeholder="Cash out 20"
+                  name="cashout20"
+                  oninput="subtotal()"
+                />
+                <div class="allout20" class="deno_mul"></div>
+              </div>
+
+              <div class="cash-row">
+                <span style="color: red">10 X</span>
+                <input
+                  type="number"
+                  id="sub10"
+                  placeholder="Cash out 10"
+                  name="cashout10"
+                  oninput="subtotal()"
+                />
+                <div class="allout10" class="deno_mul"></div>
+              </div>
+              <!--Coin container-->
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">20 C</span>
+                <input
+                  type="number"
+                  id="sub12c"
+                  placeholder="coin out 20"
+                  name="cashout12"
+                  oninput="subtotal()"
+                />
+                <div class="allout12c" class="deno_mul"></div>
+              </div>
+              <!--Coin container-->
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">10 C</span>
+                <input
+                  type="number"
+                  id="sub11c"
+                  placeholder="coin out 10"
+                  name="cashout11"
+                  oninput="subtotal()"
+                />
+                <div class="allout11c" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">5 X</span>
+                <input
+                  type="number"
+                  id="sub5"
+                  placeholder="coin out 5"
+                  name="cashout5"
+                  oninput="subtotal()"
+                />
+                <div class="allout5" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">2 X</span>
+                <input
+                  type="number"
+                  id="sub2"
+                  placeholder="coin out 2"
+                  name="cashout2"
+                  oninput="subtotal()"
+                />
+                <div class="allout2" class="deno_mul"></div>
+              </div>
+              <div class="cash-row">
+                <span style="color: rgb(80, 9, 235)">1 X</span>
+                <input
+                  type="number"
+                  id="sub1"
+                  placeholder="coin out 1"
+                  name="cashout1"
+                  oninput="subtotal()"
+                />
+                <div class="allout1" class="deno_mul"></div>
+              </div>
+
+              <div class="alloutdenomanitaion">Total</div>
+            </div>
+          </div>
+          <div class="subaddtotal"></div>
+          <button type="submit" class="submit-button" name="btn">
+            Submit
+          </button>
+          <button type="reset" class="reset-button" name="reset_">
+            Reset
+          </button>
+        </form>
+      </div>
+    </div>
+
+     
+    <!--All total container---->
+     <div class="total_container_cash_in">
+            <label style="font-size:25px;">Cash In</label>
+           <div class="cashin_total_container">Total</div>
+            <label style="font-size:25px;">Cash Out</label>
+             <div class="cashout_total_container">Total</div>
+              <label style="font-size:30px;">Txn Amount</label>
+               <div class="Alltotal_container" style="height:70px; font-size:30px;">Total</div>
+     </div>
+
+    <!--notification -->
+    <!-- Overlay element for background dimming -->
+    <div class="overlay" id="overlay">
+      <!-- Notification container -->
+      <div class="notification" id="notification">
+        <!-- Success icon -->
+        <div class="icon">✔</div>
+        <!-- Message text -->
+        <div class="message">Entry Save Successfully</div>
+        <!-- OK button -->
+        <button class="btn">Ok</button>
+      </div>
+    </div>
+    
+
+
+    <!-- pending entry-->
+
+    <div id="data-frame">
+      <h2>Transaction Manager</h2>
+      <!-- Filter dropdown -->
+      <label for="statusFilter">Filter by Status:</label>
+      <select id="statusFilter" onchange="filterTransactions()">
+        <option value="All">All</option>
+        <option value="Pending">Pending</option>
+        <option value="Done">Done</option>
+      </select>
+
+      <!-- Table for displaying transactions -->
+      <table id="transaction-table">
+        <thead>
+          <tr>
+            <th>Account No.</th>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Actions</th>
+            <th>Remark</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be added here dynamically -->
+        </tbody>
+      </table>
+          <button class="btn" onclick="openModal()">Add Transaction</button>
+      
+
+    </div>
+
+    <!-- Modal for Adding/Editing Transaction -->
+    <div id="transaction-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title">Add Transaction</h3>
+
+        <label>Account Number:</label>
+        <input type="text" id="accountNumber" required /><br /><br />
+
+        <label>Name:</label>
+        <input type="text" id="name" required /><br /><br />
+
+        <label>Amount:</label>
+        <input type="number" id="amount" required /><br /><br />
+
+        <label>Status:</label>
+        <select id="status">
+          <option value="Pending">Pending</option>
+          <option value="Done">Done</option></select
+        ><br /><br />
+
+        <label>Remark:</label>
+        <input type="text" id="remark" /><br /><br />
+
+        <button class="btn" onclick="saveTransaction()">Save</button>
+      </div>
+    </div>
+    
+
+    <!-- txn sheet display================== -->
+   
+
+
+
+  <div class="table-frame">
+  <table id="dataTable">
+      <thead>
+        <tr>
+      <th>Date</th>
+      <th>Account/Adhar/Mobile No</th>
+      <th>Customer Name</th>
+      <th>All Total</th>
+      <th>Cashin 500</th>
+      <th>Cashin 200</th>
+      <th>Cashin 100</th>
+      <th>Cashin 50</th>
+      <th>Cashin 20</th>
+      <th>Coin 20</th>
+      <th>Cashin 10</th>
+      <th>Coin 10</th>
+      <th>Cashin 5</th>
+      <th>Cashin 2</th>
+      <th>Cashin 1</th>
+      <th>Cashout 500</th>
+      <th>Cashout 200</th>
+      <th>Cashout 100</th>
+      <th>Cashout 50</th>
+      <th>Cashout 20</th>
+      <th>Coinout 20</th>
+      <th>Cashout 10</th>
+      <th>Coinout 10</th>
+      <th>Cashout 5</th>
+      <th>Cashout 2</th>
+      <th>Cashout 1</th>
+      <th>Cash In Total</th>
+      <th>Cash Out Total</th>
+    </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows will be added dynamically -->
+      </tbody>
+    </table>
+  </div>
+     
+        <!--notification -->
+    <!-- Overlay element for background dimming -->
+    <div class="overlay" id="overlay">
+      <!-- Notification container -->
+      <div class="notification" id="notification">
+        <!-- Success icon -->
+        <div class="icon">✔</div>
+        <!-- Message text -->
+        <div class="message">Entry Save Successfully</div>
+        <!-- OK button -->
+        <button class="btn">Ok</button>
+      </div>
+    </div>
+ 
+    <script src="index.js"></script>
+</body>
+</html>

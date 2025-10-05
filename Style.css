@@ -1,0 +1,964 @@
+   @import url("https://fonts.googleapis.com/css2?family=Anek+Devanagari:wdth,wght@94.3,100..800&family=Hind:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Anek Devanagari", sans-serif;
+}
+
+
+
+.header_section {
+  width: 100%;
+  height: 45px;
+  box-shadow: 0px 25px 20px -20px rgba(0, 0, 0, 0.45);
+  padding: 5px 20px 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo_containt {
+  position: absolute;
+  top: 0;
+  padding: 5px;
+}
+
+/*----open cashbook------*/
+.cash_add {
+  position: absolute;
+  top: 0;
+  right:90%;
+  padding:5px;
+  margin:5px;
+ 
+}
+
+#openby {
+  background-color: #5327cc; /* Primary background color */
+  color: #ffffff; /* Text color */
+  cursor: pointer;
+  padding: 5px 10px; /* Inner padding for better spacing */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded corners */
+  font-size: 16px; /* Font size for better readability */
+  font-weight: bold; /* Emphasize text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for a raised effect */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; /* Smooth hover effects */
+}
+
+#openby:hover {
+  background-color: #6848d1; /* Slightly lighter color on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Increase shadow intensity */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+#openby:active {
+  background-color: #3e1ca6; /* Darker color for active state */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Lower shadow intensity */
+  transform: translateY(2px); /* Slight press effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cash_add {
+    right: 50%; /* Adjust positioning on smaller screens */
+    padding: 15px;
+  }
+
+  #openby {
+    font-size: 14px; /* Slightly smaller text size */
+    padding: 8px 16px; /* Adjust padding */
+    border-radius: 6px; /* Reduce border radius */
+  }
+}
+
+@media (max-width: 480px) {
+  .cash_add {
+    right: 20%; /* Further adjustment for very small screens */
+    padding: 10px;
+  }
+
+  #openby {
+    font-size: 12px; /* Smaller text size */
+    padding: 6px 12px; /* Compact padding */
+    border-radius: 4px; /* Minimal border radius */
+  }
+}
+
+
+/*-------button container -----*/
+.button_input_container{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+}
+
+#datetime {
+  font-size: 32px; /* Increased font size for better emphasis */
+  font-family: 'Poppins', sans-serif; /* Stylish and modern font */
+  color: #ffffff; /* White text for contrast */
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); /* Sea wave-inspired gradient with blue, red, and yellow */
+  border: none; /* No border for a clean look */
+  border-radius: 50px; /* Highly rounded corners to resemble a wave */
+  padding: 10px 50px; /* Adjusted padding for a balanced look */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow for depth */
+  position: absolute;
+  right: 40px;
+  bottom: 90.6%;
+  text-align: center; /* Center the text */
+  cursor: pointer; /* Indicates interactivity */
+  transition: all 0.4s ease-in-out; /* Smooth animation for hover effects */
+}
+
+/* Hover effect */
+#datetime:hover {
+  background: linear-gradient(135deg, #fdbb2d, #b21f1f, #1a2a6c); /* Reverse wave gradient */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+  transform: scale(1.1) rotate(-2deg); /* Slight tilt for a dynamic effect */
+}
+
+/* Active (click) effect */
+#datetime:active {
+  background: linear-gradient(135deg, #0f204a, #8e1515, #d89d1e); /* Deeper tones for click state */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+  transform: scale(0.95); /* Slightly shrink on click */
+}
+
+/* Focus effect for accessibility */
+#datetime:focus {
+  outline: 3px solid #fdbb2d; /* Bright focus outline for accessibility */
+  outline-offset: 4px; /* Space between element and outline */
+}
+
+
+.show_and_hin {
+  max-width: 300px;
+  height: 95%;
+  background-color: white;
+  padding: 30px;
+  margin: 10px;
+  box-shadow: 5px 11px 53px -5px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+.denomanitation_container > input {
+  width: 12.6rem;
+  display: block;
+  font-size: 20px;
+  text-align: center;
+}
+
+.close_btn {
+  font-size: 40px;
+  position: absolute;
+  right: 5%;
+  top: 6px;
+  cursor: pointer;
+  color: red;
+  font-weight: bolder;
+}
+
+.close_btn:hover {
+  height: 50px;
+  background-color: gainsboro;
+}
+
+.denomanitation_container {
+  font-size: 20px;
+}
+
+.denomanitation_container > #submit {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  background-color: rgb(31, 162, 77);
+}
+
+.denomanitation_container > #submit:hover {
+  background-color: rgb(182, 255, 208);
+}
+
+.show_and_hin {
+  position: absolute;
+  right: 50px;
+}
+
+.show_and_hin {
+  display: none;
+}
+
+.container_iframe {
+  position: absolute;
+  top: 40px;
+  left: 120px;
+  width: 89%;
+  z-index: -1;
+}
+
+/*---input section cash add and cash out */
+.main_container {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  margin: 80px;
+  z-index: -1;
+}
+
+.container {
+  width: 50%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.customer-name {
+  margin-bottom: 20px;
+}
+
+.customer-name label {
+  font-weight: bold;
+}
+
+.customer-name input {
+  width: 500px;
+  padding: 5px;
+  /* margin-left: 10px; */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.cash-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 30px;
+}
+
+.cash-section {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  width: 50%;
+}
+
+.cash-section h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #333;
+}
+
+.cash-row {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.cash-row span {
+  font-weight: bold;
+  align-self: center;
+}
+
+.cash-row input {
+  width: 100px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  padding: 10px 30px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.reset-button {
+  padding: 10px 30px;
+  background-color: #ff4000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+/*--Data desinged ***/
+
+.frame_section {
+  margin: 100px;
+}
+
+/* dipslay none for date */
+#datetime {
+  position: absolute;
+  top: 5px;
+  left: 40%;
+  font-size: 20px;
+  width: 350px;
+  height:50px;
+}
+
+/*--All total ---*/
+.subaddtotal {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.alldenomation {
+  font-size: 25px;
+  font-weight: bolder;
+  color: green;
+}
+
+.alloutdenomanitaion {
+  font-size: 25px;
+  font-weight: bolder;
+  color: red;
+}
+
+/* Responsive Design with Media Queries */
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Make container wider on smaller screens */
+    padding: 20px;
+  }
+
+  .customer-name input {
+    width: 100%; /* Make input field full width on smaller screens */
+  }
+
+  .cash-section {
+    width: 100%; /* Make cash sections full width on smaller screens */
+  }
+
+  .cash-container {
+    flex-direction: column; /* Stack cash sections vertically */
+    gap: 20px;
+  }
+
+  #customer-name {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main_container {
+    margin: 40px; /* Reduce top/bottom margin on very small screens */
+    height: 100vh;
+  }
+}
+
+
+
+/*---notification system---*/
+/* Full-screen overlay for dimming the background */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: none; /* Initially hidden */
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Notification container styling */
+.notification {
+  width: 300px;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #d3d3d3;
+  border-radius: 12px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Show classes to make overlay and notification visible */
+.overlay.show {
+  display: flex;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Success icon styling */
+.notification .icon {
+  color: #28a745;
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+/* Message text styling */
+.notification .message {
+  font-size: 20px;
+  color: #333;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+.notification .btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #28a745;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.notification .btn:hover {
+  background-color: #218838;
+}
+
+/*-----------Wrong Notification-------------*/
+          .wrong_main_container_not{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+          }
+        .notification_error {
+            display: none;
+            align-items: center;
+            background-color: #ffe5e5;
+            color: #d8000c;
+            border: 1px solid #d8000c;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top:10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            position: absolute;
+            left: 40%;
+            z-index: 2;
+        }
+
+        .notification_error .icon {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+
+        .notification_error .text {
+            flex: 1;
+        }
+
+        .notification_error .text .title {
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+
+        .notification_error .close-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #d8000c;
+        }
+
+        .notification_error .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: #d8000c;
+            animation: progress 5s linear forwards;
+        }
+
+        @keyframes progress {
+            from {
+                width: 100%;
+            }
+            to {
+                width: 0;
+            }
+        }
+/*pendingentry/*
+
+
+/* Main container styling */
+#data-frame {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  position: absolute;
+  top: 300px;
+  margin-left: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 2px;
+  text-align: center;
+  border: 1px solid #ccc;
+  font-size: smaller;
+}
+
+th {
+  background-color: #f4f4f4;
+}
+
+/* Button and filter styling */
+.btn {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn-edit {
+  background-color: #2196f3;
+}
+.btn-delete {
+  background-color: #f44336;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.close-modal {
+  cursor: pointer;
+  float: right;
+  font-size: 40px;
+  color: #f44336;
+}
+
+/*deno table*/
+
+body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        text-align: center;
+        padding: 8px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+
+/*////////////////deno table csss----*/
+
+
+  #denoTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    border: 1px solid #ccc; /* Table border */
+    border-radius: 12px;
+    background: linear-gradient(145deg, #e8e8e8, #f2f2f2); /* Background for the table */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2), -5px -5px 15px rgba(255, 255, 255, 0.5);
+  }
+
+  #denoTable th {
+    text-align: center;
+    padding: 8px;
+    background: linear-gradient(145deg, #567ae8, #435ab2); /* Header background */
+    color: #ffffff; /* Header text color */
+    font-size: 14px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #bbb;
+    box-shadow: inset -1px -1px 5px rgba(255, 255, 255, 0.2),
+                inset 1px 1px 5px rgba(0, 0, 0, 0.2); /* Inner shadows */
+  }
+
+  #denoTable td {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    border: 1px solid #ddd;
+    background: linear-gradient(145deg, #ffffff, #d9d9d9); /* 3D effect for cells */
+    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.6),
+                inset 2px 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadows for 3D look */
+  }
+
+  #denoTable tbody tr:nth-child(even) {
+    background: linear-gradient(145deg, #f9f9f9, #eaeaea); /* Alternate row color for readability */
+  }
+
+  #denoTable tbody tr:nth-child(odd) {
+    background: linear-gradient(145deg, #ffffff, #f1f1f1); /* Alternate row color for readability */
+  }
+
+  /* Special styling for frequently viewed quantity rows */
+  #denoTable tbody tr:hover {
+    background: linear-gradient(145deg, #fffbdd, #ffeab3); /* Highlight on hover */
+    transition: background 0.3s ease;
+    box-shadow: inset -1px -1px 8px rgba(255, 255, 255, 0.6),
+                inset 1px 1px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #denoTable td.quantity {
+    font-size: 18px; /* Slightly larger font for quantity */
+    font-weight: bold;
+    color: #007700; /* Green text for readability */
+    background: linear-gradient(145deg, #e0ffe0, #c6ffc6); /* Light green background */
+    box-shadow: inset -3px -3px 6px rgba(255, 255, 255, 0.8),
+                inset 3px 3px 6px rgba(0, 128, 0, 0.2); /* Enhanced 3D effect for quantities */
+  }
+
+  /* Total row styling */
+  #denoTable tbody tr.total-row {
+    background: linear-gradient(145deg, #ffe0e0, #ffc6c6); /* Light red background for totals */
+    font-weight: bold;
+    color: #d40000; /* Red text for totals */
+  }
+
+
+
+
+  
+/* General table styling */
+#dataTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sticky header styling */
+#dataTable thead th {
+  position: sticky; /* Makes header sticky */
+  top: 0; /* Sticks header to the top */
+  background-color: #2B3E50; /* Dark gray header */
+  color: white;
+  padding: 12px 15px;
+  z-index: 2; /* Ensures header is above content */
+  border: 1px solid #ddd;
+  text-transform: uppercase;
+}
+
+/* Table Body Styling */
+#dataTable tbody tr {
+  border: 1px solid #ddd;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#dataTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternating row colors */
+}
+
+#dataTable tbody tr:hover {
+  background-color: #f1f1f1; /* Row hover effect */
+}
+
+#dataTable tbody td {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Highlight Important Columns */
+#dataTable tbody td:nth-child(4), /* All Total */
+#dataTable tbody td:nth-child(27), /* Cash In Total */
+#dataTable tbody td:nth-child(28) { /* Cash Out Total */
+  font-weight: bold;
+  background-color: #f5f5f5; /* Light green */
+  color: #333; /* Dark green */
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  #dataTable {
+    font-size: 14px;
+  }
+  #dataTable thead th {
+    padding: 10px;
+  }
+  #dataTable tbody td {
+    padding: 8px;
+  }
+}
+
+
+.table-frame {
+  width: 100%; /* Full width of the parent container */
+  max-height: 400px; /* Height limit for scrolling */
+  border: 1px solid #ccc; /* Frame border */
+  border-radius: 8px; /* Rounded corners */
+  overflow: auto; /* Enable scrolling for overflow content */
+  padding: 10px; /* Padding inside the frame */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  background-color: #f9f9f9; /* Background color */
+  transition: all 0.3s ease; /* Smooth transitions for resizing */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .table-frame {
+    max-height: 300px; /* Adjust height for smaller screens */
+    padding: 8px; /* Reduce padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .table-frame {
+    max-height: 250px; /* Further reduce height for very small screens */
+    padding: 5px; /* Minimize padding */
+    border-radius: 4px; /* Smaller border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adjust shadow */
+  }
+}
+  
+
+/*-----cashin cashout and allototal container---->
+  /* Total Container Block */
+ /*-----cashin cashout and allototal container---->
+  /* Total Container Block */
+.total_container_cash_in {
+  display: flex;
+  flex-direction: column; /* Stack blocks vertically */
+  gap: 15px;
+  padding: 20px;
+  background-color: #f4f4f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  position: absolute; /* Allow positioning */
+  top: 50%; /* Center vertically */
+  right: 15%; /* Offset from the right edge */
+  transform: translateY(-50%); /* Adjust for true vertical centering */
+
+}
+
+/* Block-like Sections */
+.cashin_total_container,
+.cashout_total_container,
+.Alltotal_container {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #333;
+  height:45px;
+ 
+}
+
+/* Colors for Specific Blocks */
+.cashin_total_container {
+  border-left: 5px solid lightgreen;
+  color: lightgreen;
+}
+
+.cashout_total_container {
+  border-left: 5px solid red;
+  color: red;
+}
+
+.Alltotal_container {
+  border-left: 5px solid #0056b3;
+  color: #0056b3; /* Blue for total */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .total_container_cash_in {
+    position: static; /* Reset positioning for smaller screens */
+    margin: auto; /* Center the block */
+    top:20%;
+    right: auto;
+    transform: none;
+  }
+
+  .cashin_total_container,
+  .cashout_total_container,
+  .Alltotal_container {
+    font-size: 14px;
+    padding: 12px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cashin_total_container,
+  .cashout_total_container,
+  .Alltotal_container {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+}
+ 
+ /*---------Helps Style -------*/
+ .help-button {
+            position: absolute;
+            right:250px;
+            top:0;
+            padding: 10px;
+            font-size: 32px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin:7px;
+            
+        }
+
+        .help-button::before {
+            content: "\1F615"; /* Unicode for a confused emoji */
+        }
+
+        .help-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .help-button:hover::after {
+            content: "Help!";
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #000;
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 20%;
+            right: 0%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        .popup h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .popup p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .close-button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #dc3545;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .close-button:hover {
+            background-color: #a71d2a;
+            transform: scale(1.05);
+        }
+
+        .overlay_sect {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .popup.active, .overlay.active {
+            display: block;
+            z-index: 1001;
+        }
